@@ -34,7 +34,7 @@ int main(void) {
 	int menorNumero;
 	int mayorNumPar;
 	int i;
-	int flag=FALSE;
+	int flag=TRUE;
 
 	for(i=0;i<5;i++){
 		printf(" Ingresa un numero: ");
@@ -48,13 +48,12 @@ int main(void) {
 
 		if(numero%2==0){ //par
 			contPar++;
-			if(flag||numero>mayorNumPar||numero!='-'){
-				mayorNumPar=numero;
-				flag=TRUE;
-			}
-		}
-		else if(numero%2==1){ //impar
+		}else{           //impar
 			contImpar++;
+		}
+
+		if(i==0 || numero>mayorNumPar){
+			mayorNumPar=numero;
 		}
 
 		if(flag==FALSE||numero<menorNumero){
